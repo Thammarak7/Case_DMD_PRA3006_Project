@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: #050505;
+}
+
+header {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+section {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #fb0202;
+}
+
+section p {
+  margin-bottom: 10px;
+}
+
+pre {
+  background-color: #282a36;
+  color: #f8f8f2;
+  border-radius: 5px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+code {
+  display: block;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.code-container pre {
+  position: relative;
+}
+
+.copy-button {
+  position: relative;
+  padding: 5px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+  border: none;
+  cursor: pointer;
+}
+
+.code-container code {
+  padding-right: 80px;
+}
+
+.copy-button:hover {
+  background: rgba(0, 0, 0, 0.8); /* slightly darker on hover */
+}
+
+#network-visualization {
+  width: 100%;
+  height: 900px;
+  margin-top: 20px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#additional-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#genetable {
+  text-align: center;
+}
+
+#genetable table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 80%;
+  margin-top: 10px;
+}
+
+#wikipathways-image {
+  text-align: center;
+}
+
+#wikipathways-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+#geneDesc li {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#DMD-explanation img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
