@@ -33,7 +33,7 @@ function createGraph(graphData) {
     .selectAll("circle")
     .data(nodes)
     .join("circle")
-    .attr("r", 10)
+    .attr("r", 6)
     .attr("fill", (d) => {
       switch (d.type) {
         case "gene":
