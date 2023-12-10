@@ -418,6 +418,7 @@
         <h3>Return Property & Value with Associated Resource/Target:</h3>
         <pre><code class="language-sql">
         PREFIX chembl: &lt;http://rdf.ebi.ac.uk/terms/chembl#&gt;
+        PREFIX target: &lt;http://rdf.ebi.ac.uk/resource/chembl/target/&gt;
 
         SELECT ?Property ?Value WHERE {
           target:CHEMBL2685 ?Property ?Value .
@@ -499,8 +500,8 @@
         PREFIX chembl: &lt;http://rdf.ebi.ac.uk/terms/chembl#&gt;
         PREFIX target: &lt;http://rdf.ebi.ac.uk/resource/chembl/target/&gt;
         
-        SELECT DISTINCT ?target ?targetLabel ?molLabel ?assayLabel ?type ?value ?proteinClassLabel WHERE {
-          VALUES ?target {target:CHEMBL4523476}
+        SELECT DISTINCT ?target ?targetLabel ?molLabel ?assayLabel ?type ?value ?proteinClassLabel (IF(?type = "Ka", -?value, ?value) AS ?sortValue) WHERE {
+          VALUES ?target {target:CHEMBL4523476 target:CHEMBL2093862 target:CHEMBL5742 target:CHEMBL2346486 target:CHEMBL4742325 target:CHEMBL1841 target:CHEMBL3797010 target:CHEMBL2685 target:CHEMBL4184 target:CHEMBL4105919 target:CHEMBL4630889 target:CHEMBL4295656 target:CHEMBL5683 target:CHEMBL4531}
           ?assay  chembl:hasTarget ?target.
        
           ?activity chembl:hasAssay  ?assay.
@@ -513,14 +514,14 @@
           ?activity chembl:type ?type.
           ?activity chembl:standardValue ?value.
         
-          FILTER(?type IN ("Ki", "Ka", "Kd", "Kdiss" "IC50", "EC50"))
+          FILTER(?type IN ("Ki", "Ka", "Kd", "Kdiss", "IC50", "EC50"))
         
           OPTIONAL {
             ?target chembl:hasProteinClassification ?proteinClass .
             ?proteinClass rdfs:label ?proteinClassLabel.
           }
         } 
-        ORDER BY ASC(?value) 
+        ORDER BY ASC(?sortValue)
         LIMIT 10000
       </code></pre>
         <button class="copy-button" onclick="copyToClipboard(this)">
@@ -601,7 +602,7 @@
       <section id="graphical-display">
         <h2>Graphical Display</h2>
         <p>
-          Our goal is to build an informative graph representing three types of
+          The goal is to build an informative graph representing three types of
           nodes: Proteins/Genes, Small Molecules, and Protein Classification,
           along with their connections.
         </p>
@@ -609,11 +610,14 @@
     </div>
 
     <div id="network-visualization"></div>
-    <section>
-      <script src="https://d3js.org/d3.v6.min.js"></script>
-      <script src="./d3.js"></script>
-      <script src="./script.js"></script>
-    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="./d3.js"></script>
+    <script src="./script.js"></script>
+
+    <div id="loadDataContainer">
+      <button id="loadData">Load Data/Graph</button>
+    </div>
 
     <section>
       <h2>Answers to Research Question:</h2>

@@ -33,7 +33,7 @@ function createGraph(graphData) {
     .selectAll("circle")
     .data(nodes)
     .join("circle")
-    .attr("r", 5)
+    .attr("r", 10)
     .attr("fill", (d) => {
       switch (d.type) {
         case "gene":
@@ -91,7 +91,7 @@ function createGraph(graphData) {
     .data(legendData)
     .enter()
     .append("text")
-    .attr("x", 20) // Position text next to the rectangles
+    .attr("x", 20)
     .attr("y", (d, i) => i * 25 + 7.5) // Position text in the middle of the rectangles
     .attr("alignment-baseline", "middle") // Center-align the text vertically
     .attr("text-anchor", "start") // Ensure text starts right after the rectangle
@@ -122,6 +122,3 @@ function drag(simulation) {
     .on("drag", dragged)
     .on("end", dragended);
 }
-
-// Then you would call createGraph with your data
-createGraph(graphData);

@@ -14,6 +14,8 @@ function copyToClipboard(element) {
   );
 }
 
+// -------------------------------------------------------------------------------//
+
 // SparQL Query Search
 var ENDPOINT = "https://chemblmirror.rdf.bigcat-bioinformatics.org/sparql";
 var GRAPH = `
@@ -119,12 +121,15 @@ function processData(data, maxPerTarget = 100) {
   return { nodes: Array.from(nodes.values()), links };
 }
 
-// Fetching and processing data
-sparql(ENDPOINT, GRAPH)
-  .then((response) => response.json())
-  .then((data) => {
-    const maxPerGene = 100;
-    const graphData = processData(data, maxPerGene);
-    createGraph(graphData);
-  })
-  .catch((error) => console.error("Error fetching data:", error));
+$(document).ready(function () {
+  $("#loadData").click(function () {
+    sparql(ENDPOINT, GRAPH)
+      .then((response) => response.json())
+      .then((data) => {
+        const maxPerGene = 100;
+        const graphData = processData(data, maxPerGene);
+        createGraph(graphData);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  });
+});

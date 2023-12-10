@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
   line-height: 1.6;
   padding: 20px;
   background-color: #f4f4f4;
@@ -20,7 +20,7 @@ header {
 }
 
 section {
-  margin: 20px 0;
+  margin: 20px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 5px;
@@ -86,11 +86,28 @@ code {
   text-align: center;
 }
 
-#additional-charts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+#loadDataContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+#loadData {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#loadData:hover {
+  background-color: #45a049;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 a {
