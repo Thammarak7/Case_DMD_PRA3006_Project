@@ -2,7 +2,7 @@
 
 - **Thammarak Khantibunyanukool** 
 
-## Teachers and Contributors for My Project (2023)
+## Teachers Supervising My Project (2023)
 
 - **Dr. Rianne Fijten** - GitHub: [@riannefijten](https://github.com/riannefijten)
 - **Dr. Egon Willighagen** - GitHub: [@egonw](https://github.com/egonw)
