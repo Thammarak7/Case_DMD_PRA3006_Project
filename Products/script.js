@@ -121,6 +121,7 @@ function processData(data, maxPerTarget = 100) {
   return { nodes: Array.from(nodes.values()), links };
 }
 
+//jQuery
 $(document).ready(function () {
   $("#loadData").click(function () {
     sparql(ENDPOINT, GRAPH)

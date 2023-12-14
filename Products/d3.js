@@ -1,3 +1,4 @@
+//Create Graph
 function createGraph(graphData) {
   const { nodes, links } = graphData;
   const width = 1500;
@@ -43,7 +44,7 @@ function createGraph(graphData) {
         case "proteinClass":
           return "green"; // Color for protein classifications
         default:
-          return "gray"; // Default color
+          return "gray";
       }
     })
     .call(drag(simulation));
@@ -73,7 +74,7 @@ function createGraph(graphData) {
     .attr("class", "legend")
     .attr("transform", "translate(" + (width - 200) + ", 40)"); // Adjust the position as needed
 
-  // Draw legend rectangles
+  // Draw legend
   legend
     .selectAll("rect")
     .data(legendData)

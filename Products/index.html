@@ -99,7 +99,11 @@
         <h1><u>Working Gene Tables Information</u></h1>
         <p>
           This are the genes that have ChemBL IDs when searching through Gene
-          Names
+          Names. Relevant informations like Name, Protein Target Classification
+          and Targe Type are also retrieved from Snorql: A SPARQL Explorer for
+          ChEMBL RDF using the Protein Classication Query code mentioned in the
+          code samples: Protein Classication Query(Mentioned in the section
+          below about SparQL Query Code Samples).
         </p>
         <table border="1">
           <tr bgcolor="grey">
@@ -433,7 +437,7 @@
 
     <div class="code-container">
       <section>
-        <h3>Protein Classiication Query:</h3>
+        <h3>Protein Classication Query:</h3>
         <pre><code class="language-sql">
         PREFIX chembl: &lt;http://rdf.ebi.ac.uk/terms/chembl#&gt;
         PREFIX target: &lt;http://rdf.ebi.ac.uk/resource/chembl/target/&gt;
@@ -686,10 +690,9 @@
         profound effects on the biological processes and pathways that
         contribute to muscle degeneration and weakness.
         <br /><br />
-        <b>1. MYOF (Myoferlin):</b> Small molecule interactions that promote or
-        stabilize myoferlin function could enhance muscle cell membrane repair
-        mechanisms, potentially slowing down the progression of muscle damage in
-        DMD.<br /><br />
+        <b>1. MYOF:</b> Small molecule interactions that promote or stabilize
+        myoferlin function could enhance muscle cell membrane repair mechanisms,
+        potentially slowing down the progression of muscle damage in DMD.<br /><br />
 
         <b>2. RUNX1:</b> Modulators of RUNX1 could influence transcriptional
         regulation, possibly affecting stem cell differentiation and potentially
