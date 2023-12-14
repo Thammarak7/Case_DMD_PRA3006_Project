@@ -1,5 +1,5 @@
 # Project_Case_DMD
-Duchenne muscular dystrophy(DMD) Disease Bioinformatics 
+Duchenne Muscular Dystrophy(DMD) Disease Bioinformatics 
 
 ## Description
 
